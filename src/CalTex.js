@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/jerojasro/mjscalc/widgets/calcWidget
+title: $:/plugins/jerojasro/mjscalc/widgets/CalTex
 type: application/javascript
 module-type: widget
 
