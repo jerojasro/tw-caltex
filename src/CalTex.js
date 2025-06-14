@@ -35,12 +35,12 @@ if ($tw.wiki.isSystemTiddler("$:/plugins/tiddlywiki/katex")) {
     KatexWidget = require("$:/core/modules/widgets/widget.js").widget;
 }
 
-var CalcBaseWidget = function(parseTreeNode,options) {
+var CalTexWidget = function(parseTreeNode,options) {
     this.initialise(parseTreeNode,options);
 };
-CalcBaseWidget.prototype = new Widget();
+CalTexWidget.prototype = new Widget();
 
-CalcBaseWidget.prototype.renderErrorMessage = function(errorMessage, parent, nextSibling) {
+CalTexWidget.prototype.renderErrorMessage = function(errorMessage, parent, nextSibling) {
     if (!this.verbose) {
         return;
     }
@@ -100,14 +100,14 @@ function resultToKatex(result) {
     return result.toString();
 }
 
-CalcBaseWidget.prototype.toTex = function(mathNode, result) {
+CalTexWidget.prototype.toTex = function(mathNode, result) {
     if (this.isSimpleAssignment(mathNode)) {
         return mathNode.toTex({handler: katexNumNodeHandler});
     }
     return mathNode.toTex({handler: katexNumNodeHandler}) + " = " + resultToKatex(result);
 }
 
-CalcBaseWidget.prototype.isSimpleAssignment = function(mathNode) {
+CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
     return (
         mathNode.type == "AssignmentNode" &&
         (
@@ -117,7 +117,7 @@ CalcBaseWidget.prototype.isSimpleAssignment = function(mathNode) {
     );
 }
 
-CalcBaseWidget.prototype.mathjsTiddlerScope = function() {
+CalTexWidget.prototype.mathjsTiddlerScope = function() {
     var tiddlerWidget;
     var self = this;
     while (self) {
@@ -137,7 +137,7 @@ CalcBaseWidget.prototype.mathjsTiddlerScope = function() {
 /*
 Add elements to the DOM
 */
-CalcBaseWidget.prototype.render = function(parent, nextSibling) {
+CalTexWidget.prototype.render = function(parent, nextSibling) {
     this.parentDomNode = parent;
     this.computeAttributes();
 
@@ -161,19 +161,13 @@ CalcBaseWidget.prototype.render = function(parent, nextSibling) {
 /*
 Selectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering
 */
-CalcBaseWidget.prototype.refresh = function(changedTiddlers) {
+CalTexWidget.prototype.refresh = function(changedTiddlers) {
     if (this.refreshChildren(changedTiddlers)) {
         this.refreshSelf();
         return true;
     }
     return false;
 };
-
-CalcBaseWidget.prototype._render = function() {
-    // to be overriden by child classes
-}
-
-// private code
 
 function getExpressionText(parseTreeNodeChildren) {
     const textWidgets = parseTreeNodeChildren.filter((w) => w.type == "text");
@@ -184,50 +178,7 @@ function getExpressionText(parseTreeNodeChildren) {
 }
 
 
-var CalcTxtResultWidget = function(parseTreeNode,options) {
-    this.initialise(parseTreeNode,options);
-};
-CalcTxtResultWidget.prototype = new CalcBaseWidget();
-
-
-CalcTxtResultWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
-    var textResult = result.toString();
-
-    var textNode = this.document.createTextNode(textResult);
-    parent.insertBefore(textNode, nextSibling);
-    this.domNodes.push(textNode);
-    return;
-};
-
-
-var CalcTxtWidget = function(parseTreeNode,options) {
-    this.initialise(parseTreeNode,options);
-};
-CalcTxtWidget.prototype = new CalcBaseWidget();
-
-
-CalcTxtWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
-    var textResult;
-    if (this.isSimpleAssignment(mathNode)) {
-        textResult = mathNode.toString();
-    } else {
-        textResult = mathNode.toString() + " = " + result.toString();
-    }
-
-    var textNode = this.document.createTextNode(textResult);
-    parent.insertBefore(textNode, nextSibling);
-    this.domNodes.push(textNode);
-    return;
-};
-
-
-var CalcKatexInlineWidget = function(parseTreeNode,options) {
-    this.initialise(parseTreeNode,options);
-};
-CalcKatexInlineWidget.prototype = new CalcBaseWidget();
-
-
-CalcKatexInlineWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
+CalTexWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
     var katexResult = this.toTex(mathNode, result);
 
     var katexParseTreeNode = {
@@ -236,6 +187,7 @@ CalcKatexInlineWidget.prototype._render = function(mathNode, result, parent, nex
         "attributes": {
             "text": {"name": "text", "type": "string", "value": katexResult},
             "displayMode": {"name": "text", "type": "string", "value": "false"}
+            //"displayMode": {"name": "text", "type": "string", "value": "true"}
         }
     };
     this.makeChildWidgets([katexParseTreeNode]);
@@ -244,33 +196,6 @@ CalcKatexInlineWidget.prototype._render = function(mathNode, result, parent, nex
     return;
 };
 
-var CalcKatexDisplayWidget = function(parseTreeNode,options) {
-    this.initialise(parseTreeNode,options);
-};
-CalcKatexDisplayWidget.prototype = new CalcBaseWidget();
-
-CalcKatexDisplayWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
-    var katexResult = this.toTex(mathNode, result);
-
-    var katexParseTreeNode = {
-        "tag": "$katex",
-        "type": "katex",
-        "attributes": {
-            "text": {"name": "text", "type": "string", "value": katexResult},
-            "displayMode": {"name": "text", "type": "string", "value": "true"}
-        }
-    };
-    this.makeChildWidgets([katexParseTreeNode]);
-    this.renderChildren(parent, nextSibling);
-
-    return;
-};
-
-
-exports.calc = CalcTxtResultWidget;
-exports.cexp = CalcTxtWidget;
-
-exports.kati = CalcKatexInlineWidget;
-exports.katd = CalcKatexDisplayWidget;
+exports.caltex = CalTexWidget;
 
 })();
