@@ -143,8 +143,8 @@ CalTexWidget.prototype.render = function(parent, nextSibling) {
     this.parentDomNode = parent;
     this.computeAttributes();
 
-    var verboseStr = this.getAttribute("verbose", "true");
-    this.verbose = !(verboseStr == "false");
+    this.inline = this.getAttribute("$inline", "true") == "true";
+    this.verbose = !(this.getAttribute("$verbose", "true") == "false");
 
     var expText = getExpressionText(this.parseTreeNode.children);
     if (!expText) return;
@@ -184,13 +184,15 @@ function getExpressionText(parseTreeNodeChildren) {
 CalTexWidget.prototype._render = function(mathNode, result, parent, nextSibling) {
     var katexResult = this.toTex(mathNode, result);
 
+    var displayMode = "true";
+    if (this.inline) displayMode = "false";
+
     var katexParseTreeNode = {
         "tag": "$katex",
         "type": "katex",
         "attributes": {
             "text": {"name": "text", "type": "string", "value": katexResult},
-            "displayMode": {"name": "text", "type": "string", "value": "false"}
-            //"displayMode": {"name": "text", "type": "string", "value": "true"}
+            "displayMode": {"name": "text", "type": "string", "value": displayMode}
         }
     };
     this.makeChildWidgets([katexParseTreeNode]);
