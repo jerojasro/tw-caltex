@@ -109,6 +109,8 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
 
 CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
     return (
+        mathNode.type == "BlockNode" ||
+        mathNode.type == "FunctionAssignmentNode" ||
         mathNode.type == "AssignmentNode" &&
         (
             mathNode.value.type == "ConstantNode" ||
@@ -146,6 +148,7 @@ CalTexWidget.prototype.render = function(parent, nextSibling) {
 
     var expText = getExpressionText(this.parseTreeNode.children);
     if (!expText) return;
+    expText = expText.trim();
 
     var mathNode;
     var result;
