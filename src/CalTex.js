@@ -30,11 +30,6 @@ math.import({linreg: function(Y, X) {
 
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 
-var KatexWidget = undefined;
-if ($tw.wiki.isSystemTiddler("$:/plugins/tiddlywiki/katex")) {
-    KatexWidget = require("$:/core/modules/widgets/widget.js").widget;
-}
-
 var CalTexWidget = function(parseTreeNode,options) {
     this.initialise(parseTreeNode,options);
 };
