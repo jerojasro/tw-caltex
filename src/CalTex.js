@@ -144,6 +144,7 @@ CalTexWidget.prototype.render = function(parent, nextSibling) {
     var expText = getExpressionText(this.parseTreeNode.children);
     if (!expText) return;
     expText = expText.trim();
+    if (!expText) return;
 
     var mathNode;
     var result;
