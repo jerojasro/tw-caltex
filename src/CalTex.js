@@ -138,8 +138,8 @@ CalTexWidget.prototype.render = function(parent, nextSibling) {
     this.parentDomNode = parent;
     this.computeAttributes();
 
-    this.inline = this.getAttribute("$inline", "true") == "true";
-    this.verbose = !(this.getAttribute("$verbose", "true") == "false");
+    this.inline = this.getAttribute("$inline", "yes") == "yes";
+    this.verbose = !(this.getAttribute("$verbose", "yes") == "no");
 
     var expText = getExpressionText(this.parseTreeNode.children);
     if (!expText) return;
