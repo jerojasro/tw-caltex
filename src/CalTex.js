@@ -95,7 +95,19 @@ function resultToKatex(result) {
     return result.toString();
 }
 
+CalTexWidget.prototype.blockToTex = function(blockNode, resultSet) {
+    var nodeTexStrs = [];
+    for (var i = 0; i < blockNode.blocks.length; i++) {
+        nodeTexStrs.push(this.toTex(blockNode.blocks[i].node, resultSet.entries[i]));
+    }
+    return nodeTexStrs.join("\\quad");
+}
+
+
 CalTexWidget.prototype.toTex = function(mathNode, result) {
+    if (mathNode.type == "BlockNode") {
+        return this.blockToTex(mathNode, result);
+    }
     if (this.isSimpleAssignment(mathNode)) {
         return mathNode.toTex({handler: katexNumNodeHandler});
     }
@@ -104,7 +116,6 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
 
 CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
     return (
-        mathNode.type == "BlockNode" ||
         mathNode.type == "FunctionAssignmentNode" ||
         mathNode.type == "AssignmentNode" &&
         (
