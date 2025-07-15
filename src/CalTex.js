@@ -78,8 +78,14 @@ function katexNumNodeHandler(node, options) {
     }
 }
 
+function katexRow(row) {
+    if (typeof row == "number") return katexNumber(row);
+
+    return row.map(katexNumber).join("&");
+}
+
 function katexArray(arr) {
-    return "\\begin{bmatrix}" + arr.map(katexNumber).join("\\\\") + "\\end{bmatrix}"
+    return "\\begin{bmatrix}" + arr.map(katexRow).join("\\\\") + "\\end{bmatrix}"
 }
 
 function resultToKatex(result) {
