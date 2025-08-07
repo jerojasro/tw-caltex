@@ -72,9 +72,27 @@ function katexNumber(n) {
     return removeTrailingZeroes(n.toFixed(6));
 }
 
-function katexNumNodeHandler(node, options) {
+function katexSymbol(symbolNode) {
+    var firstUnderscoreIdx = symbolNode.name.indexOf("_");
+    if (firstUnderscoreIdx < 0) {
+        return symbolNode.toTex();
+    }
+    if (firstUnderscoreIdx < 1 || firstUnderscoreIdx >= symbolNode.name.length - 1) {
+        return symbolNode.toTex();
+    }
+
+    var sym = symbolNode.name.slice(0, firstUnderscoreIdx);
+    var subIndex = symbolNode.name.slice(firstUnderscoreIdx + 1, symbolNode.name.length);
+
+    return (new math.SymbolNode(sym).toTex()) + "_{" + katexSymbol(new math.SymbolNode(subIndex)) + "}";
+}
+
+function katexNodeHandler(node, options) {
     if (node.type == 'ConstantNode') {
         return katexNumber(node.value);
+    }
+    if (node.type == 'SymbolNode') {
+        return katexSymbol(node);
     }
 }
 
@@ -115,9 +133,9 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
         return this.blockToTex(mathNode, result);
     }
     if (this.isSimpleAssignment(mathNode)) {
-        return mathNode.toTex({handler: katexNumNodeHandler});
+        return mathNode.toTex({handler: katexNodeHandler});
     }
-    return mathNode.toTex({handler: katexNumNodeHandler}) + " = " + resultToKatex(result);
+    return mathNode.toTex({handler: katexNodeHandler}) + " = " + resultToKatex(result);
 }
 
 CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
