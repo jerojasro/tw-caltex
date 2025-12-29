@@ -67,6 +67,8 @@ function katexSciNot(n) {
 function katexNumber(n) {
     if (n == 0) return "0";
 
+    if (n == Infinity) return "\\infty";
+
     if (Math.abs(n) >= 1e6 || Math.abs(n) < 1e-4) return katexSciNot(n);
 
     return removeTrailingZeroes(n.toFixed(6));
