@@ -135,9 +135,9 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
         return this.blockToTex(mathNode, result);
     }
     if (this.isSimpleAssignment(mathNode)) {
-        return mathNode.toTex({handler: katexNodeHandler});
+        return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'});
     }
-    return mathNode.toTex({handler: katexNodeHandler}) + " = " + resultToKatex(result);
+    return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'}) + " = " + resultToKatex(result);
 }
 
 CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
