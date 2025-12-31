@@ -123,8 +123,21 @@ function resultToKatex(result) {
 
 CalTexWidget.prototype.blockToTex = function(blockNode, resultSet) {
     var nodeTexStrs = [];
+
+    // resultSet does not necessarily have the same amount of elements as in
+    // blockNode; if the user finished a statement with a semicolon, the result
+    // will be calculated but mathjs won't pass it in the resultSet; this is
+    // indicated in each node, in its .visible attribute; the additional index
+    // variable for resultSet (rsIdx) handles this
+    var rsIdx = 0;
+
     for (var i = 0; i < blockNode.blocks.length; i++) {
-        nodeTexStrs.push(this.toTex(blockNode.blocks[i].node, resultSet.entries[i]));
+        if (blockNode.blocks[i].visible) {
+            nodeTexStrs.push(this.toTex(blockNode.blocks[i].node, resultSet.entries[rsIdx++]));
+        }
+        else {
+            nodeTexStrs.push(this.toTex(blockNode.blocks[i].node, null));
+        }
     }
     return nodeTexStrs.join("\\quad");
 }
@@ -134,7 +147,10 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
     if (mathNode.type == "BlockNode") {
         return this.blockToTex(mathNode, result);
     }
-    if (this.isSimpleAssignment(mathNode)) {
+
+    // result will be null when the user finished their expression with a
+    // semicolon, since the result is calculated but not intended for display
+    if (this.isSimpleAssignment(mathNode) || !result) {
         return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'});
     }
     return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'}) + " = " + resultToKatex(result);
