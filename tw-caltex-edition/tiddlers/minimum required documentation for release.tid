@@ -1,0 +1,22 @@
+created: 20251229020657150
+modified: 20251231002629263
+tags: todo
+title: minimum required documentation for release
+
+* intro:
+** $:/plugins/jerojasro/mjscalc/doc/install
+** $:/plugins/jerojasro/mjscalc/doc/tutorial
+* $:/plugins/jerojasro/mjscalc/doc/operators
+* $:/plugins/jerojasro/mjscalc/doc/constants
+* $:/plugins/jerojasro/mjscalc/doc
+* $:/plugins/jerojasro/mjscalc/doc/all-funcs
+** $:/plugins/jerojasro/mjscalc/doc/matrix-funcs
+* $:/plugins/jerojasro/mjscalc/doc/custom-funcs : defining functions
+* $:/plugins/jerojasro/mjscalc/doc/num-display : rules for displaying numbers, rounding them, when to apply scientific notation, etc. 
+
+and a search box that matches text only in the tiddlers under `$:/plugins/jerojasro/mjscalc/doc/`
+
+and backlinks for tiddlers FFS, but make it work only in these (doc) tiddlers?
+
+* what if the user adds their own backlinks thingy?
+* I think I'll add those manually

@@ -1,0 +1,17 @@
+created: 20250612033257247
+modified: 20251229012719817
+tags: test
+title: polynomial roots
+
+Let <$caltex>a=1</$caltex>, <$caltex>b=3</$caltex>, and <$caltex>c=2</$caltex> be the coefficients of $$ax^2+bx+c$$
+
+
+the roots for that polynomial are:
+
+<$caltex $inline=no>
+x_1=(-b+sqrt(b^2-4*a*c))/2a
+</$caltex>
+
+and
+
+<$caltex $inline=no>x_2=(-b-sqrt(b^2-4*a*c))/2a</$caltex>

@@ -1,0 +1,8 @@
+created: 20251229140912521
+modified: 20251231024010766
+tags: todo done
+title: icon for inline-mode widget
+
+current icon is the same as the button for block-mode widget
+
+after committing several inkscape crimes, I created $:/plugins/jerojasro/mjscalc/images/calc-inline-icon

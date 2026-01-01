@@ -1,0 +1,8 @@
+created: 20251229030729975
+modified: 20251229030919367
+title: $:/plugins/jerojasro/caltex/doc/constants
+
+|`e`|<$caltex $inline="yes">e</$caltex>||`pi`|<$caltex $inline="yes">pi</$caltex>|
+|`phi`|<$caltex $inline="yes">phi</$caltex>||`SQRT2`|<$caltex $inline="yes">SQRT2</$caltex>|
+
+See [[mathjs.org|https://mathjs.org/docs/reference/constants.html#constant-reference]] for the full list of constants available.

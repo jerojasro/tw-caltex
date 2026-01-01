@@ -1,0 +1,24 @@
+created: 20250612185300109
+modified: 20251229001716704
+title: add keyboard shortcuts for at least one widget
+
+!toolbar button setup
+
+added the following SVG image: $:/plugins/jerojasro/mjscalc/images/calc-icon , which is the icon that apppears in the toolbar.
+
+created $:/plugins/jerojasro/mjscalc/ui/EditorToolbar/calc , which is the toolbar button, and associated information:
+
+* `condition`: condition for deciding to show/hide the button
+* `text`: code executed when button is clicked
+* `icon`: tiddler name of the image used as icon, in this case $:/plugins/jerojasro/mjscalc/images/calc-icon
+* `shortcuts`: "ID" of the keyboard shortcut associated to this button; `mjscalc-btn` in this case
+* `description`: tooltip for the button
+
+more info in [[TW's docs|https://tiddlywiki.com/static/How%2520to%2520create%2520dynamic%2520editor%2520toolbar%2520buttons.html]].
+
+! keyboard shortcut setup
+
+using the previously defined "mjscalc-btn" ID:
+
+* $:/config/shortcuts/mjscalc-btn : its text defines the shortcut; see [[keyboard codes|https://tiddlywiki.com/static/Keyboard%2520Codes.html]]
+*  $:/config/ShortcutInfo/mjscalc-btn : so the shortcut appears in $:/core/ui/ControlPanel/KeyboardShortcuts ; the `text` of this tiddler appears there 

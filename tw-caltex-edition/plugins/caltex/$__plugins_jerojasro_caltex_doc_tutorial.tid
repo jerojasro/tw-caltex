@@ -1,0 +1,78 @@
+created: 20251231000438457
+modified: 20251231020555372
+title: $:/plugins/jerojasro/caltex/doc/tutorial
+
+\procedure sbs(example)
+|!code|!result|
+|<$codeblock code=<<example>>/> |  <<example>>  |
+\end
+
+The <$link to="$:/plugins/jerojasro/caltex/doc/caltex-widget">''caltex'' widget</$link> evaluates its content as an arithmetic expression, and generates LaTeX code to represent both the expression, ''and its result'', and shows both using the KaTeX widget ---one of TiddlyWiki's standard plugins---.
+
+The two main goals of this plugin are:
+
+* Provide an easy-to-use facility for performing //basic// numerical calculations.
+* Allow easy inspection of the expressions used for generating the values obtained.
+
+This plugin doesn't attempt to emulate/substitute software like [[Jupyter|https://jupyter.org]] or programming languages, but rather aims to provide functionality similar to a scientific calculator, where you have access to basic math, matrix, and statistic functions, and reasonable defaults for showing your calculation and their results.
+
+Let's see how it works. For example, to add a couple of numbers, you'd write:
+
+<<sbs """<$caltex>
+sqrt(3^2+4^2)
+</$caltex>
+""">>
+
+Notice how CalTex shows you your expression ($$\sqrt{3^2+4^2}$$) and its result ($$5$$), and how it generated the required LaTeX code + KaTeX markup to show you a proper square root, instead of just the expression text (`sqrt(...)`).
+
+CalTex supports most common [[math functions|$:/plugins/jerojasro/caltex/doc/typical-funcs]]:
+
+<<sbs """<$caltex $inline="no">
+1/sin(45 * (2* pi/360))^2
+</$caltex>
+""">>
+
+<<sbs """<$caltex $inline="no">
+log10(1e9/1e3)
+</$caltex>
+""">>
+
+Also [[arrays and matrixes|$:/plugins/jerojasro/caltex/doc/matrix-funcs]]:
+
+<<sbs """<$caltex $inline="no">
+3 * [1,2 ; 3,4]
+</$caltex>
+""">>
+
+You can also define variables and use them in your expressions:
+
+<<sbs """<$caltex $inline="no">
+w = 3
+h = 5
+area = w * h
+</$caltex>
+""">>
+
+Notice how you can add expressions ---in this case, variable definitions--- using //multiple lines// inside the `$caltex` widget, and they'll be shown in the same line. This is useful when you want to define several variables but don't want to use too much vertical space to show them.
+
+Any variable you define can be used in other widget instances, that appear later in your tiddler's content. For example:
+
+<<sbs """<$caltex $inline="no">
+sqArea = w * w
+</$caltex>
+""">>
+
+Note that we didn't have to define $$w$$ again to use it in the code above.
+
+Regarding variable names: the underscore character (`_`) lets you add subindexes to them; anything after the `_` will be used as a subindex for the preceding text. For example:
+
+<<sbs """
+<$caltex $inline="no">
+v_1 = [1,2]
+kg_potatoes=2
+kg_beef=0
+</$caltex>""">>
+
+---
+
+This plugin uses [[mathjs.org|https://mathjs.org/index.html]] to provide this functionality; while here we attempt to document how to use mathjs's common functionality (see the [[docs|$:/plugins/jerojasro/caltex/doc]] included), our aim here is not to cover mathjs exhaustively. Please check mathjs's website for [[the supported syntax|https://mathjs.org/docs/expressions/syntax.html]], all the available [[functions|https://mathjs.org/docs/reference/functions.html]] and [[constants|https://mathjs.org/docs/reference/constants.html]], and other in-depth questions you might have about [[mathjs|https://mathjs.org/docs/index.html]].

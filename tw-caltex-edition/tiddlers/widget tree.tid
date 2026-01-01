@@ -1,0 +1,15 @@
+created: 20250612021354238
+modified: 20250612025536369
+tags: 
+title: widget tree
+
+! plain insertion
+
+* KatexWidget
+* ElementWidget (`<p>`)
+* TranscludeWidget
+** transcludeTitle (tiddler title)
+** sourceText: tiddler's text
+* TranscludeWidget
+** attributes: `{tiddler:  "$:/core/ui/ViewTemplate/body/default"}`
+** transcludeTitle: `"$:/core/ui/ViewTemplate/body/default"`

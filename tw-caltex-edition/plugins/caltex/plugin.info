@@ -1,0 +1,12 @@
+{
+    "created": "20250614223813336",
+    "tags": "",
+    "title": "$:/plugins/jerojasro/caltex",
+    "modified": "20251231004512840",
+    "plugin-type": "plugin",
+    "dependents": "$:/plugins/tiddlywiki/katex",
+    "name": "CalTex",
+    "description": "Evaluate mathematical expressions and display them and their results using LaTeX",
+    "version": "0.1.5",
+    "list": "doc doc/install"
+}

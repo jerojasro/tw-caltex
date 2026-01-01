@@ -1,0 +1,27 @@
+created: 20250614183802898
+modified: 20250807234310371
+tags: bug todo done
+title: correct handling of BlockNodes with non-trivial expressions
+
+multiline expressions like
+
+```
+<$caltex>
+x=1+2
+y=3+4
+</$caltex>
+```
+
+should show as output
+
+$$
+x = 1 + 2 = 3\quad y = 3 + 4 = 7
+$$
+
+but currently only show
+
+$$
+x = 1 + 2 \quad y = 3 + 4
+$$
+
+this requires reimplementing handling of `BlockNode`s to evaluate each expression separately to add its  result at the end

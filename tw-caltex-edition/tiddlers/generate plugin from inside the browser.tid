@@ -1,0 +1,27 @@
+created: 20250614223338120
+modified: 20250715151014070
+title: generate plugin from inside the browser
+
+https://tiddlywiki.com/dev/static/How%2520to%2520create%2520plugins%2520in%2520the%2520browser.html
+
+
+<$set name="plugintiddlers" value='[all[shadows+tiddlers]prefix[$:/plugins/jerojasro/mjscalc/]] [all[shadows+tiddlers]prefix[$:/config/shortcuts/mjscalc]] [all[shadows+tiddlers]prefix[$:/config/ShortcutInfo/mjscalc]] +[addprefix["]addsuffix["]join[, ]]'>
+<$macrocall $name="copy-to-clipboard" src=<<plugintiddlers>>/>
+<$codeblock code=<<plugintiddlers>>/>
+</$set>
+
+---
+
+if you haven't added/removed tiddlers from the plugin, just open the console and execute:
+
+```
+$tw.utils.repackPlugin("$:/plugins/jerojasro/mjscalc")
+```
+
+That will create the new plugin inside the current TW, and increase the "bugfix" version number.
+
+If you have added/removed tiddlers, pass a list of the tiddlers to consider; for example:
+
+```
+$tw.utils.repackPlugin("$:/plugins/jerojasro/mjscalc", ["$:/plugins/jerojasro/mjscalc/images/calc-icon", "$:/plugins/jerojasro/mjscalc/libraries/math.js", "$:/plugins/jerojasro/mjscalc/ui/EditorToolbar/calc", "$:/plugins/jerojasro/mjscalc/widgets/CalTex", "$:/config/shortcuts/mjscalc-btn", "$:/config/ShortcutInfo/mjscalc-btn"])
+```

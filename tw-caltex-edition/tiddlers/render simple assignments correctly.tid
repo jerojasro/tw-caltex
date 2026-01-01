@@ -1,0 +1,10 @@
+created: 20250613165317910
+modified: 20250613185445154
+title: render simple assignments correctly
+
+definitions like `x=1` are rendered as `x = 1 = 1`, which is correct but silly. Check for that case and show more reasonable output.
+
+check implemented: see that: 
+
+* the top node is an assignment node (`.type == "AssigmentNode"`)
+* its only value is either a constant, or an array.

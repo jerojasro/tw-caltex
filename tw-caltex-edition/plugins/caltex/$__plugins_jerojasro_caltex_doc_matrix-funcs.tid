@@ -1,0 +1,48 @@
+created: 20251230174502314
+modified: 20251230204120552
+title: $:/plugins/jerojasro/caltex/doc/matrix-funcs
+
+\procedure sbs(example)
+|!code|!result|
+|<$codeblock code=<<example>>/> |  <<example>>  |
+\end
+
+`norm(v)`: norm of a vector. 
+
+`det(M)`: determinant of a matrix.
+
+`identity(n)`: create an identity matrix of size $$n\times n$$
+
+`inv(M)`: inverse of a matrix.
+
+`transpose(M)`: the transpose of a matrix.
+
+`lusolve(A, b)`: solves the linear equation system $$\mathbf{A}\times \mathbf{x} = \mathbf{b}$$.
+
+For example, given the set of equations:
+
+$$
+\begin{align*}
+x + y &= 3\\
+x - y &= 1\\
+\end{align*}
+$$
+
+In matrix form:
+
+<<sbs """<$caltex $inline="no">
+A = [1, 1; 1, -1]
+b = [3, 1]
+</$caltex>
+""">>
+
+And solving:
+
+<<sbs """<$caltex $inline="no">
+lusolve(A, b)
+</$caltex>
+""">>
+
+----
+
+See the full list of available functions at [[mathjs.org|https://mathjs.org/docs/reference/functions.html#matrix-functions]]

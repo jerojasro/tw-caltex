@@ -1,0 +1,15 @@
+created: 20251228233135390
+modified: 20251229002043715
+tags: todo done
+title: add button for widget in inline mode
+
+following closely [[add keyboard shortcuts for at least one widget]]:
+
+! toolbar button
+
+: $:/plugins/jerojasro/mjscalc/ui/EditorToolbar/calc-inline ; suffix for keyboard shortcut: `mjscalc-btn-inline`
+
+! keyboard shortcut
+
+* $:/config/shortcuts/mjscalc-btn-inline
+* $:/config/ShortcutInfo/mjscalc-btn-inline

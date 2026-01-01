@@ -1,0 +1,45 @@
+created: 20251229025722913
+modified: 20251229221226220
+title: $:/plugins/jerojasro/caltex/doc/operators
+
+!For numbers
+
+`+`, `-`, `*`, `/` have their typical meanings. `a^b` is used for exponentiation
+
+`a % b` calculates the ''remainder'' of `a / b`, calculated as integer division; for example, <$caltex $inline="yes">5 % 3</$caltex>
+
+`a!` yields the factorial of its argument: <$caltex $inline="yes">4!</$caltex>
+
+!For arrays/matrixes
+
+`+`, `-` calculate the element-wise addition/subtraction.
+
+`a  .*  b` calculates the element-wise multiplication, and `a ./ b` the element-wise division; for example:
+
+<$caltex $inline="no">
+a=[1, 2, 3]
+b=[2, 2, 2]
+</$caltex>
+
+<$caltex $inline="no">
+a .* b
+a./b
+</$caltex>
+
+`*` performs matrix multiplication:
+
+<$caltex $inline="no">
+a = [1,2;3,4]
+b = [1,0;0,1]
+a * b
+</$caltex>
+
+`M'` transposes a matrix:
+
+<$caltex $inline="no">
+a'
+</$caltex>
+
+----
+
+See [[mathjs.org|https://mathjs.org/docs/expressions/syntax.html#operators]] for the full list of available operators.

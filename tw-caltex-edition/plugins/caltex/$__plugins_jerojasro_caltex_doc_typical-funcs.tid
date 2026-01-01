@@ -1,0 +1,23 @@
+created: 20251229021541656
+modified: 20251229023831867
+title: $:/plugins/jerojasro/caltex/doc/typical-funcs
+
+Logarithms:
+
+* `log10`: <$caltex $inline="yes">log10(1000)</$caltex>
+* `log2`: <$caltex $inline="yes">log2(1024)</$caltex>
+* `log` <$caltex $inline="yes">log(2.71828)</$caltex>
+** other bases: `log(n, base)`: <$caltex $inline="yes">log(81, 3)</$caltex>
+
+Trigonometry:
+
+* `sin`, `cos`, `tan`, `cot`, `sec`, `csc`
+* `asin`, `acos`, `atan` (and `atan2(y, x)`), `acot`, `asec`, `acsc`
+* hyperbolic functions: `sinh` and friends, and their inverses (`asinh`, ...)
+
+`abs`, `exp` (using Euler's constant), `pow(base, exponent)`, `sqrt`
+
+`ceil`, `floor`
+
+See [[mathjs.org|https://mathjs.org/docs/reference/functions.html#arithmetic-functions]] for more functions.
+

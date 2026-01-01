@@ -1,0 +1,10 @@
+created: 20251231002029527
+modified: 20251231002351075
+tags: todo
+title: minify and secure mathjs
+
+see https://mathjs.org/docs/expressions/security.html
+
+also, try to remove elements like code for CAS. Maybe discard imaginary numbers support too? Or a version supporting just `number` instead of all datatypes?
+
+see also https://mathjs.org/docs/custom_bundling.html

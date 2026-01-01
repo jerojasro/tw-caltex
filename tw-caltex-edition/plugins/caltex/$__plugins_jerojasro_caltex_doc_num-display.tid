@@ -1,0 +1,12 @@
+created: 20251230024245228
+modified: 20251230025523224
+title: $:/plugins/jerojasro/caltex/doc/num-display
+
+The results of calculations are formatted automatically by CalTex, as either regular numbers, or using scientific notation; the main goal here is to always have readable output, regardless of the particular value of the result.
+
+The specific rules used by CalTex to decide how to format a number are:
+
+* if its absolute value is larger or equal than $$10^6$$, it's shown using scientific notation, with three decimal digits.
+* if its absolute value is smaller than $$10^{-4}$$, it's shown using scientific notation.
+* otherwise, it's shown as a regular number, with at most 6 digits after the decimal dot.
+* both in regular notation, and in scientific notation, trailing zeroes after the decimal dot are removed. E.g., $$12.345000$$ becomes $$12.345$$ 

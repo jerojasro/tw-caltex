@@ -1,0 +1,19 @@
+caption: {{$:/language/Buttons/Underline/Caption}}
+condition: [<targetTiddler>!has[type]] [<targetTiddler>get[type]prefix[text/vnd.tiddlywiki]]
+created: 20250612162649627
+description: CalTex in block mode
+icon: $:/plugins/jerojasro/caltex/images/calc-icon
+modified: 20251231023919537
+shortcuts: ((caltex-btn))
+tags: $:/tags/EditorToolbar
+title: $:/plugins/jerojasro/caltex/ui/EditorToolbar/calc
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="wrap-selection"
+	prefix="""<$caltex $inline="no">
+"""
+	suffix="""
+</$caltex>"""
+	trimSelection="yes"
+/>

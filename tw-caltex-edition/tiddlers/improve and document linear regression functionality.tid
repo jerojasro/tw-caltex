@@ -1,0 +1,6 @@
+created: 20251231021950849
+modified: 20251231022111102
+tags: todo
+title: improve and document linear regression functionality
+
+the current functionality, doesn't come from stock mathjs, doesn't return R (or R^^2^^), and doesn't document its return values properly.

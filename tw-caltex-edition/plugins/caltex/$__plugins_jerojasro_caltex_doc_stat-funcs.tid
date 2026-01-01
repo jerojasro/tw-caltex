@@ -1,0 +1,27 @@
+created: 20251229004624253
+modified: 20251229022159280
+title: $:/plugins/jerojasro/caltex/doc/stat-funcs
+
+`mean`, `max`, `min`, `sum`, `prod`: pass to any of them a list of arguments, or an array, or a matrix; they'll return a single element:
+
+<$caltex $inline="no">
+mean(1,2)
+max([3,4])
+min([1,2;3,4])
+</$caltex>
+
+`median`: if there is an even amount of elements, returns the average of the two in the middle:
+
+<$caltex $inline="no">
+median([10,20,30,40])
+</$caltex>
+
+`std`: standard deviation; takes two arguments: an array, and an optional `normalization`, with possible values:
+
+* `"unbiased"` (gives you the sample standard deviation, dividing by $$n-1$$). ''Default value''.
+* `"uncorrected"` (gives you the population standard deviation, dividing by $$n$$)
+* `"biased"` (divides by $$n+1$$)
+
+The above is just a list of the most commonly used functions. See [[mathjs.org|https://mathjs.org/docs/reference/functions.html#statistics-functions]] for all the available functions.
+
+There's also `variance`, with the same behaviour/options/arguments as `std`.

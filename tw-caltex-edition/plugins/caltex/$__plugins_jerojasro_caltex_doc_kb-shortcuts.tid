@@ -1,0 +1,10 @@
+created: 20251231024046949
+modified: 20251231024925214
+title: $:/plugins/jerojasro/caltex/doc/kb-shortcuts
+type: 
+
+This plugin adds two buttons to the edit toolbar, along with associated keyboard shortcuts for inserting calculations quickly:
+
+|!icon|!shortcut|!action|
+|{{$:/plugins/jerojasro/caltex/images/calc-inline-icon}}|`alt-shift-i`|inserts the code for a `$caltex` widget in inline mode|
+|{{$:/plugins/jerojasro/caltex/images/calc-icon}}|`alt-shift-k`|inserts the code for a `$caltex` widget in block mode|

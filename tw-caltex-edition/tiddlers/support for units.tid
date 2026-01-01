@@ -1,0 +1,10 @@
+created: 20251229020402717
+modified: 20251229021129753
+tags: todo
+title: support for units
+
+* display units correctly
+** as of now, they are just passed verbatim to katex; e.g.: `$$1.2 m$$`, which shows up as //1.2m//
+* detect when the expression is merely the definition of a value and don't show the result twice
+** `x = 1.2 m` is shown as `x = 1.2 m = 1.2 m` 
+* document available units and SI prefixes (k, m, $$\mu$$, etc.)

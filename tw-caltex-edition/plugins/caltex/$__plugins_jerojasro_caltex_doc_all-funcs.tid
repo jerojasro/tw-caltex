@@ -1,0 +1,10 @@
+created: 20251229004316469
+modified: 20251231004245249
+tags: 
+title: $:/plugins/jerojasro/caltex/doc/all-funcs
+
+The following tiddlers document a subset of the available functions; for the full list of functions available, see the [[mathjs.org|https://mathjs.org/docs/reference/functions.html]] website. 
+
+* [[Typical math functions|$:/plugins/jerojasro/caltex/doc/typical-funcs]]
+* [[Statistical functions|$:/plugins/jerojasro/caltex/doc/stat-funcs]]
+* [[Matrix/Array functions|$:/plugins/jerojasro/caltex/doc/matrix-funcs]]

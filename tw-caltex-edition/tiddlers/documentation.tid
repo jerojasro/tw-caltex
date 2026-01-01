@@ -1,0 +1,7 @@
+created: 20250612155616729
+modified: 20250612160519448
+title: documentation
+
+I learned about https://arthanzel.github.io/evaluatex/ thanks to @JanJo at [[Talk|https://talk.tiddlywiki.org/t/katexcalc-a-configurable-calculator-and-katex-formula-editor-in-tiddywiki/7862]]
+
+this led me to https://mklauber.github.io/tw5-plugins/#%24%3A%2Fplugins%2Fmklauber%2Fmath.js and eventually https://mathjs.org/

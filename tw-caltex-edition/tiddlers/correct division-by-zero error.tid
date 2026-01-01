@@ -1,0 +1,8 @@
+created: 20251228224901829
+modified: 20251229003004813
+tags: todo bug done
+title: correct division-by-zero error
+
+for now, we yield $$\infty$$
+
+not entirely happy with this

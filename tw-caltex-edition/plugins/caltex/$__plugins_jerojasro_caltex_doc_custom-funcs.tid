@@ -1,0 +1,22 @@
+created: 20251231012759888
+modified: 20251231013202521
+title: $:/plugins/jerojasro/caltex/doc/custom-funcs
+
+\procedure sbs(example)
+|!code|!result|
+|<$codeblock code=<<example>>/> |  <<example>>  |
+\end
+
+It's possible to define simple functions; their body can only be a one-line expression, which is the value returned by the function. For example:
+
+<<sbs """<$caltex $inline="no">
+myAdd(x, y) = x + y
+</$caltex>
+""">>
+
+After defining it, you can call it and use it in other expressions:
+
+<<sbs """<$caltex $inline="no">
+myAdd(1,2) / 3
+</$caltex>
+""">>

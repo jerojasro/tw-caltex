@@ -1,0 +1,15 @@
+created: 20250614001209715
+modified: 20250807234211582
+tags: 
+title: test cases
+
+<$caltex $inline="no">s_W=3</$caltex>
+<$caltex $inline="no">
+x=1
+y=2
+m = y+2
+</$caltex>
+
+<$caltex $inline="no">r=23</$caltex>
+
+<$caltex $inline="no">s_W+m+2</$caltex>

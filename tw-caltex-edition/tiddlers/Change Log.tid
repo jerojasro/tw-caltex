@@ -1,0 +1,14 @@
+created: 20251228224524464
+modified: 20251228224524464
+tags: 
+title: Change Log
+
+!! v 0.1.4
+
+* [[add keyboard shortcuts for at least one widget]]
+* [[render simple assignments correctly]]
+* [[number formatting]]
+* explorar uso de variables
+* [[correct handling of BlockNodes with non-trivial expressions]]
+* pack as a plugin
+** [[generate plugin from inside the browser]]
