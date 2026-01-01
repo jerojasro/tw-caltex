@@ -1,0 +1,13 @@
+# Development
+
+how to start the wiki?
+
+```
+tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb tw-caltex-edition --listen
+```
+
+how to generate a single-file wiki?
+
+```
+tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb tw-caltex-edition --listen
+```
