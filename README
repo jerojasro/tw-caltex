@@ -9,5 +9,5 @@ tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb tw-calte
 how to generate a single-file wiki?
 
 ```
-tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb tw-caltex-edition --listen
+tiddlywiki tw-caltex-edition --build index
 ```
