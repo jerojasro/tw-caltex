@@ -1,0 +1,15 @@
+created: 20260203163309895
+modified: 20260203163309895
+tags: 
+title: Changelog
+type: text/vnd.tiddlywiki
+
+! DONE/Changelog
+
+<$list filter="[tag[release]!sort[reldate]]">
+
+!! <<currentTiddler>> ({{!!reldate}})
+
+{{!!text}}
+
+</$list>

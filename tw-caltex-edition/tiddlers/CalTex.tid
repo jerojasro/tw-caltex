@@ -1,9 +1,16 @@
 created: 20251231234744878
-modified: 20251231235031089
+modified: 20260203163715721
 tags: 
 title: CalTex
 type: text/vnd.tiddlywiki
 
-CalTex is a tiddlywiki plugin that lets you use tiddlywiki as a calculator, and shows you the expression you wrote, and its result, using KaTeX.
+CalTex is a tiddlywiki plugin that lets you use tiddlywiki as a calculator:
+
+* It shows you the expression you wrote, properly formatted using KaTeX.
+* And it also calculates and shows you ''its result'', as part of the KaTeX expression displayed.
+
+The current version of this plugin is <$list filter="[tag[release]sort[reldate]last[]]"><$link/>, released on {{!!reldate}}</$list>. You can also check the plugin's [[Changelog]].
+
+! Documentation
 
 {{$:/plugins/jerojasro/caltex/doc}}

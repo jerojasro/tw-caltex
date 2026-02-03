@@ -1,9 +1,9 @@
-created: 20251228224524464
-modified: 20251228224524464
-tags: 
-title: Change Log
-
-!! v 0.1.4
+created: 20260203163217083
+modified: 20260203163230512
+reldate: 2025-12-01
+tags: release
+title: v 0.1.4
+type: text/vnd.tiddlywiki
 
 * [[add keyboard shortcuts for at least one widget]]
 * [[render simple assignments correctly]]

@@ -1,5 +1,5 @@
 created: 20250611014920355
-modified: 20251231234743764
+modified: 20260203163330189
 tags: 
 title: TODOs
 type: text/vnd.tiddlywiki
@@ -11,24 +11,8 @@ type: text/vnd.tiddlywiki
 ** default should be configurable on a "plugin-wide" basis
 ** should be configurable on a per-widget basis, as a parameter
 * add microspaces to separate groups of three digits?
-
-! DONE
-
-!! [[Change Log]]
-
-!! v 0.1.5
-
-* [[correct division-by-zero error]]
-* [[add button for widget in inline mode]]
-* [[icon for inline-mode widget]]
-* [[minimum required documentation for release]]
-
-!! v 0.1.6
-
 * [[minify and secure mathjs]]
 * [[support for units]]
 * [[improve and document linear regression functionality]]
 
-! workspace
-
-[[documentation]]
+See also: [[Changelog]], [[documentation]]

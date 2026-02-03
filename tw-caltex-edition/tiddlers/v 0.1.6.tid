@@ -1,0 +1,9 @@
+created: 20260203162517984
+modified: 20260203162728985
+reldate: 2026-02-03
+tags: release
+title: v 0.1.6
+type: text/vnd.tiddlywiki
+
+
+* Change rendering of multiplication operator, from $$\cdot$$ to $$\times$$

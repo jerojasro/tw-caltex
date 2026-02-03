@@ -1,0 +1,11 @@
+created: 20260203163022096
+modified: 20260203163046699
+reldate: 2025-12-31
+tags: release
+title: v 0.1.5
+type: text/vnd.tiddlywiki
+
+* [[correct division-by-zero error]]
+* [[add button for widget in inline mode]]
+* [[icon for inline-mode widget]]
+* [[minimum required documentation for release]]
