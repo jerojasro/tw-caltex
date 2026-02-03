@@ -4,7 +4,7 @@ title: $:/plugins/jerojasro/caltex/doc
 
 [[Tutorial|$:/plugins/jerojasro/caltex/doc/tutorial]]<br>
 [[Installation|$:/plugins/jerojasro/caltex/doc/install]]<br>
-<$link to="$:/plugins/jerojasro/caltex/doc/caltex-widget">The `$caltex` widget</$link><br>
+<$link to="$:/plugins/jerojasro/caltex/doc/caltex-widget">The `$caltex` widget and its available options</$link><br>
 [[Toolbar buttons and keyboard shortcuts|$:/plugins/jerojasro/caltex/doc/kb-shortcuts]]<br>
 Writing expressions: [[Available operators|$:/plugins/jerojasro/caltex/doc/operators]], [[constants|$:/plugins/jerojasro/caltex/doc/constants]] and [[functions|$:/plugins/jerojasro/caltex/doc/all-funcs]]<br>
 [[Writing your own functions|$:/plugins/jerojasro/caltex/doc/custom-funcs]]<br>

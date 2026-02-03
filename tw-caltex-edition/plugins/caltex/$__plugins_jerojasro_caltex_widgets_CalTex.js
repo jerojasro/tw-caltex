@@ -96,6 +96,9 @@ function katexNodeHandler(node, options) {
     if (node.type == 'SymbolNode') {
         return katexSymbol(node);
     }
+    if ((node.type === 'OperatorNode') && (node.fn === 'multiply')) {
+      return node.args[0].toTex(options) + ' \\times ' + node.args[1].toTex(options)
+    }
 }
 
 function katexRow(row) {
