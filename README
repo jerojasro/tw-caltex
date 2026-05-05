@@ -17,6 +17,14 @@ mv tw-caltex-edition/output/index.html docs
 
 how to make a new release?
 
+there are three steps to it:
+
+* update the plugin.info file with the new version number
+* create a new tiddler documenting the release, in the plugin's tiddlywiki
+* commit and tag the commit with the new version, and push to github
+
+details for the second step:
+
 start the wiki, and create a new release tiddler. The easiest way to do it is to clone an existing tiddler (e.g., "v 0.1.7"), and take it from there.
 
 * set the proper tiddler title for the new version
