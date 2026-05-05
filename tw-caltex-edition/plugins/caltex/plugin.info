@@ -7,6 +7,6 @@
     "dependents": "$:/plugins/tiddlywiki/katex",
     "name": "CalTex",
     "description": "Evaluate mathematical expressions and display them and their results using LaTeX",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "list": "doc doc/install"
 }
