@@ -6,8 +6,21 @@ how to start the wiki?
 tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb tw-caltex-edition --listen
 ```
 
-how to generate a single-file wiki?
+how to generate the plugin+single-file wiki?
+
+(intented for release)
 
 ```
 tiddlywiki tw-caltex-edition --build index
+mv tw-caltex-edition/output/index.html docs
 ```
+
+how to make a new release?
+
+start the wiki, and create a new release tiddler. The easiest way to do it is to clone an existing tiddler (e.g., "v 0.1.7"), and take it from there.
+
+* set the proper tiddler title for the new version
+* describe the changes in the tiddler content
+* don't forget to update the `reldate` field in that tiddler
+
+that's it

@@ -1,0 +1,9 @@
+created: 20260505150634790
+modified: 20260505151000630
+reldate: 2026-05-05
+tags: release
+title: v 0.1.7
+type: text/vnd.tiddlywiki
+
+
+* Parentheses elimination is buggy and displays operations like (A+B) * C as A+B*C. Reverting parens handling to the original: keep (and display) the parens the user typed, as they are.

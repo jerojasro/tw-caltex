@@ -154,9 +154,9 @@ CalTexWidget.prototype.toTex = function(mathNode, result) {
     // result will be null when the user finished their expression with a
     // semicolon, since the result is calculated but not intended for display
     if (this.isSimpleAssignment(mathNode) || !result) {
-        return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'});
+        return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'keep'});
     }
-    return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'auto'}) + " = " + resultToKatex(result);
+    return mathNode.toTex({handler: katexNodeHandler, parenthesis: 'keep'}) + " = " + resultToKatex(result);
 }
 
 CalTexWidget.prototype.isSimpleAssignment = function(mathNode) {
