@@ -149,7 +149,7 @@ CalTexWidget.prototype.blockToTex = function(blockNode, resultSet) {
             nodeTexStrs.push(this.toTex(blockNode.blocks[i].node, null));
         }
     }
-    return nodeTexStrs.join("\\quad");
+    return nodeTexStrs.join("\\quad ");
 }
 
 
