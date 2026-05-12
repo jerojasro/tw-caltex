@@ -14,6 +14,8 @@ Widget for evaluating math expressions and rendering them as text or LaTeX via K
 
 var math = require("$:/plugins/jerojasro/caltex/libraries/math.js");
 
+math.exp.toTex = 'e^{${args}}';
+
 math.import({
     linreg: function(Y, X) {
         var sumx = math.sum(X);

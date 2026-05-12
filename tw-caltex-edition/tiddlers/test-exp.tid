@@ -1,0 +1,20 @@
+created: 20260512020005047
+modified: 20260512020942093
+tags: test
+title: test-exp
+type: text/vnd.tiddlywiki
+
+<$caltex $inline="no">
+z = 0.3
+y = 0.7
+</$caltex>
+
+<table><tr><th>test</th><th>expected</th></tr><tr><td>
+<$caltex $inline="no">
+exp(y + z)
+</$caltex>
+</td>
+<td>
+$$e^{y+z}=2.718282$$
+</td>
+</tr></table>
