@@ -14,19 +14,26 @@ Widget for evaluating math expressions and rendering them as text or LaTeX via K
 
 var math = require("$:/plugins/jerojasro/caltex/libraries/math.js");
 
-math.import({linreg: function(Y, X) {
-    var sumx = math.sum(X);
-    var sumy = math.sum(Y);
-    var sumxy = math.sum(math.dotMultiply(X, Y));
-    var sumx2 = math.sum(math.dotMultiply(X, X));
-    var n = math.count(X);
+math.import({
+    linreg: function(Y, X) {
+        var sumx = math.sum(X);
+        var sumy = math.sum(Y);
+        var sumxy = math.sum(math.dotMultiply(X, Y));
+        var sumx2 = math.sum(math.dotMultiply(X, X));
+        var sumy2 = math.sum(math.dotMultiply(Y, Y));
+        var n = math.count(X);
 
-    var D = math.det([[sumx2, sumx], [sumx, n]]);
+        var avgx = math.mean(X);
+        var avgy = math.mean(Y);
 
-    var m = math.det([[sumxy, sumx], [sumy, n]]) / D;
-    var b = math.det([[sumx2, sumxy], [sumx, sumy]]) / D;
-    return math.matrix([m, b]);
-}})
+        var D = math.det([[sumx2, sumx], [sumx, n]]);
+
+        var m = math.det([[sumxy, sumx], [sumy, n]]) / D;
+        var b = math.det([[sumx2, sumxy], [sumx, sumy]]) / D;
+        var r = (sumxy/n - avgx * avgy) / math.sqrt((sumx2/n - avgx**2) * (sumy2/n - avgy**2));
+        return math.matrix([m, b, r]);
+    }
+})
 
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 

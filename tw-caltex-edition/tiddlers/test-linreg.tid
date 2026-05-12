@@ -1,0 +1,26 @@
+created: 20260512012130827
+modified: 20260512014918760
+tags: test
+title: test-linreg
+type: text/vnd.tiddlywiki
+
+<$caltex $inline="no">
+X=[0,10,20,30,40]
+Y= [0.6, 0.6625, 0.811321, 0.9625, 1.10596]
+</$caltex>
+
+<$caltex $inline="no">
+LR=linreg(Y, X)
+</$caltex>
+
+expected result:
+
+$$
+\left[
+\begin{matrix}
+0.013119\\
+0.566072\\
+0.991709
+\end{matrix}
+\right]
+$$
